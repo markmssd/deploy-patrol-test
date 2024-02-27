@@ -5,22 +5,14 @@ on:
     branches:
       - main
 
-# hello
-# goodbye
-# concurrency:
-#   group: unity-dashboard-${{ github.ref }}
-#   cancel-in-progress: false
-
 jobs:
   deploy-stg:
     name: Deploy to Staging
     runs-on: ubuntu-latest
-    concurrency:
-      group: job-${{ github.ref }}
-      cancel-in-progress: false
     permissions: write-all
     environment: staging
     steps:
+      - uses: ahmadnassri/action-workflow-queue@v1
       - name: Checkout
         uses: actions/checkout@v4
       - name: Deploy Staging
