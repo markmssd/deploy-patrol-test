@@ -13,6 +13,9 @@ jobs:
   deploy-stg:
     name: Deploy to Staging
     runs-on: ubuntu-latest
+    concurrency:
+      group: job-${{ github.ref }}
+      cancel-in-progress: false
     permissions: write-all
     environment: staging
     steps:
