@@ -14,7 +14,8 @@ jobs:
     environment: staging
     steps:
       - uses: ahmadnassri/action-workflow-queue@v1
-        with: 7200000 # 2h
+        with: 
+          timeout: 7200000 # 2h
       - name: Checkout
         uses: actions/checkout@v4
       - name: Deploy Staging
