@@ -6,7 +6,7 @@ on:
       - main
 
 concurrency:
-  group: unity-dashboard-${{ github.ref_name }}
+  group: unity-dashboard-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
