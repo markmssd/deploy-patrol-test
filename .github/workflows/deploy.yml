@@ -18,7 +18,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Deploy Staging
-        run: echo "Deployed Staging!"
+        run: |
+          echo "Deployed Staging!"
+          sleep 300
   deploy-prd:
     name: Deploy to Production
     runs-on: ubuntu-latest
