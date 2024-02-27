@@ -5,9 +5,9 @@ on:
     branches:
       - main
 
-concurrency:
-  group: unity-dashboard-${{ github.ref }}
-  cancel-in-progress: false
+# concurrency:
+#   group: unity-dashboard-${{ github.ref }}
+#   cancel-in-progress: false
 
 jobs:
   deploy-stg:
